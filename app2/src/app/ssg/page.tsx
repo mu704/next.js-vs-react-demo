@@ -9,6 +9,10 @@ async function getPostsStatic(): Promise<Post[]> {
   // We also set route-level revalidate above for ISR.
   const res = await fetch(
     "https://jsonplaceholder.typicode.com/posts?_limit=5"
+    // For ISR
+    // {
+    //   next: {revalidate,}
+    // }
   );
   if (!res.ok) throw new Error("Failed to fetch posts");
   return res.json();
@@ -28,7 +32,8 @@ export default async function SSGPage() {
       </div>
       <h1 className="text-2xl font-bold mb-2">Static (ISR) Posts</h1>
       <p className="text-sm text-gray-600 mb-4">
-        This page is statically generated with incremental revalidation every 60 seconds.
+        This page is statically generated with incremental revalidation every 60
+        seconds.
       </p>
       <ul className="space-y-3">
         {posts.map((p) => (

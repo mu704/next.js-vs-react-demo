@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import PostsList from "./posts-list";
+import type { Metadata } from "next";
 
 type Post = { id: number; title: string; body: string };
 
@@ -72,3 +73,32 @@ export default async function PostsPage({
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Posts | Next.js vs React Demo",
+  description:
+    "Server-rendered posts with optimized images from JSONPlaceholder.",
+  openGraph: {
+    title: "Posts | Next.js vs React Demo",
+    description:
+      "Server-rendered posts with optimized images from JSONPlaceholder.",
+    url: "/posts",
+    siteName: "Next.js vs React Demo",
+    images: [
+      {
+        url: "https://via.placeholder.com/1200x630.png?text=Posts",
+        width: 1200,
+        height: 630,
+        alt: "Posts preview",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Posts | Next.js vs React Demo",
+    description:
+      "Server-rendered posts with optimized images from JSONPlaceholder.",
+    images: ["https://via.placeholder.com/1200x630.png?text=Posts"],
+  },
+};
