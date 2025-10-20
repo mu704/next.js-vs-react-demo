@@ -59,7 +59,7 @@ export default function PostList({ limit }: PostListProps) {
             aria-label={`Open ${p.title}`}
           >
             <img
-              src={`https://picsum.photos/${p.id}/500`}
+              src={`https://picsum.photos/id/${p.id}/200/300`}
               alt={p.title}
               width={96}
               height={96}

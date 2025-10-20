@@ -18,7 +18,7 @@ export default function PostsList({ posts }: Props) {
             aria-label={`Open ${p.title}`}
           >
             <Image
-              src={`https://picsum.photos/${p.id}/500`}
+              src={`https://picsum.photos/id/${p.id}/200/300`}
               alt={p.title}
               width={96}
               height={96}
