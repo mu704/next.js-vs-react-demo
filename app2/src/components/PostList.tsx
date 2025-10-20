@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Post = {
   userId: number;
@@ -58,12 +59,14 @@ export default function PostList({ limit }: PostListProps) {
             className="shrink-0"
             aria-label={`Open ${p.title}`}
           >
-            <img
+            <Image
               src={`https://picsum.photos/id/${p.id}/200/300`}
               alt={p.title}
               width={96}
               height={96}
+              sizes="96px"
               className="rounded object-cover w-24 h-24 bg-[#f2f2f2] dark:bg-[#1a1a1a]"
+              priority={false}
             />
           </Link>
           <div className="min-w-0 flex-1">
